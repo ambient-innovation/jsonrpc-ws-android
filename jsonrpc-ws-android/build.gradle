@@ -23,12 +23,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-
-    compile('com.thetransactioncompany:jsonrpc2-base:1.38')
-    compile('org.java-websocket:Java-WebSocket:1.3.0')
-    compile('fi.vtt.nubomedia:utilities-android:1.0.1@aar') { transitive=true }
+    compile 'com.thetransactioncompany:jsonrpc2-base:1.38'
+    //    compile('org.java-websocket:Java-WebSocket:1.3.0')
+    compile('fi.vtt.nubomedia:utilities-android:1.0.1@aar') { transitive = true }
+    compile files('src/main/libs/Java-WebSocket.jar')
 }
 
 def siteUrl = 'https://github.com/nubomedia-vtt/jsonrpc-ws-android'      // Homepage URL of the library
